@@ -1,1 +1,71 @@
 /* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    background-color: whitesmoke;
+    ;
+}
+
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: .9375rem;
+    padding-right: .9375rem;
+}
+
+@media (min-width: 992px) {
+    .container {
+        width: 60.625rem;
+    }
+}
+
+.row {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-gap: 1.25rem;
+}
+
+.col-6 {
+    grid-column: span 6;
+}
+
+.input-full-width {
+    width: 100%;
+}
+
+.center-items {
+    text-align: center;
+}
+
+.error-snackbar {
+    color: #fff;
+    background-color: #CA0B00;
+}
+
+.success-snackbar {
+    background-color: #4BB543;
+}
+
+.mat-simple-snackbar-action>button {
+    color: #fff
+}
+
+.main-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.offline {
+    color: #CA0B00;
+}
+
+.online {
+    color: #4BB543;
+}

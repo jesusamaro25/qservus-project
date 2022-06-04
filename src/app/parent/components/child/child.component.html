@@ -1,0 +1,63 @@
+<mat-card class="container center-items">
+    <form [formGroup]="groupForm" (ngSubmit)="handleSubmit()">
+        <div class="title-div">
+            <span class="title-text">{{componentConstants.TITLE}}</span>
+        </div>
+     
+        <div class="row">
+            <div class="col-6">
+                <mat-form-field class="input-full-width" appearance="outline">
+                    <mat-label>{{componentConstants.NAME}}</mat-label>
+                    <input type="text" matInput formControlName="name" [placeholder]="componentConstants.NAME">
+                    <mat-error *ngIf="groupForm.get('name')!.hasError('maxlength')">
+                        {{componentConstants.MAX_LENGTH}}
+                    </mat-error>
+                    <mat-error *ngIf="groupForm.get('name')!.hasError('required')">
+                        {{componentConstants.REQUIRED}}
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <div class="col-6">
+                <mat-form-field class="input-full-width" appearance="outline">
+                    <mat-label>{{componentConstants.LASTNAME}}</mat-label>
+                    <input type="text" matInput formControlName="lastname" [placeholder]="componentConstants.LASTNAME">
+                    <mat-error *ngIf="groupForm.get('lastname')!.hasError('maxlength')">
+                        {{componentConstants.MAX_LENGTH}}
+                    </mat-error>
+                    <mat-error *ngIf="groupForm.get('lastname')!.hasError('required')">
+                        {{componentConstants.REQUIRED}}
+                    </mat-error>
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <mat-form-field class="input-full-width" appearance="outline">
+                    <mat-label>{{componentConstants.EMAIL}}</mat-label>
+                    <input type="email" matInput formControlName="email" [placeholder]="componentConstants.EMAIL">
+                    <mat-error *ngIf="groupForm.get('email')!.hasError('required')">
+                        {{componentConstants.REQUIRED}}
+                    </mat-error>
+                    <mat-error *ngIf="groupForm.get('email')!.hasError('email')">
+                        {{componentConstants.EMAIL_ERROR}}
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <div class="col-6">
+                <mat-form-field class="input-full-width" appearance="outline">
+                    <mat-label>{{componentConstants.PASSWORD}}</mat-label>
+                    <input type="password" matInput formControlName="password"
+                        [placeholder]="componentConstants.PASSWORD">
+                        <mat-error *ngIf="groupForm.get('password')!.hasError('required')">
+                            {{componentConstants.REQUIRED}}
+                        </mat-error>
+                        <mat-error *ngIf="groupForm.get('password')!.hasError('pattern')">
+                            {{componentConstants.PASSWORD_ERROR}}
+                        </mat-error>
+                </mat-form-field>
+            </div>
+        </div>
+        <button [disabled]="groupForm.invalid" color="primary"
+            mat-raised-button>{{componentConstants.REGISTER}}</button>
+    </form>
+</mat-card>

@@ -1,0 +1,22 @@
+<div class="main-div main-height">
+    <ng-container *ngIf="!isLoading; else loadingcontainer">
+        <span class="center-items pb-1 online bold-text" *ngIf="networkStatus">{{componentConstants.ONLINE}}</span>
+        <span class="center-items pb-1 offline bold-text" *ngIf="!networkStatus">{{componentConstants.OFFLINE}}</span>
+        <app-child (formInformation)="getFormInformation($event)" [defaultValues]="defaultValues"></app-child>
+        <div class="center-items pt-2">
+            <span>{{formValue | json}}</span>
+            <div class="pt-2">
+                <button (click)="setFormValues()" color="accent"
+                    mat-raised-button>{{componentConstants.BUTTON}}</button>
+            </div>
+        </div>
+    </ng-container>
+</div>
+
+
+<ng-template #loadingcontainer>
+    <div class="center-items">
+        <span class="loading-text">{{componentConstants.LOADING}}</span>
+        <mat-progress-bar mode="indeterminate" class="pt-1"></mat-progress-bar>
+    </div>
+</ng-template>

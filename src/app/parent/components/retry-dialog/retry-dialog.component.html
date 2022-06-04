@@ -1,0 +1,10 @@
+<div class="center-items main-div height-dialog">
+    <h1 class="title-text" mat-dialog-title>{{componentConstants.CURRENTLY}} {{data}} {{componentConstants.USERS}}</h1>
+    <h2>
+        {{componentConstants.INSERT}}
+    </h2>
+    <div mat-dialog-actions class="center">
+        <button color="warn" (click)="postpone()" mat-raised-button mat-dialog-close>{{componentConstants.POSTPONE}}</button>
+        <button color="primary" (click)="confirm()" mat-raised-button mat-dialog-close cdkFocusInitial>{{componentConstants.LOAD}}</button>
+    </div>
+</div>
