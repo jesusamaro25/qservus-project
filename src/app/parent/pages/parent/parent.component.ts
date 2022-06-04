@@ -110,6 +110,10 @@ export class ParentComponent implements OnInit, OnDestroy {
    */
   saveInLocalStorage(body: Information): void {
     this.offlineStoredUsers.push(body);
+    this._snackBar.open(`${this.componentConstants.ERROR} ${body.email} ${this.componentConstants.CONNECTION}`, this.componentConstants.CLOSE, {
+      duration: 8000,
+      panelClass: ['error-snackbar']
+    });
     localStorage.setItem('pending-registered-offline-angular-test', JSON.stringify(this.offlineStoredUsers));
   }
 

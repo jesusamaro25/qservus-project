@@ -6,3 +6,4 @@ export const SUCCESS = 'se ha guardado de forma exitosa';
 export const LOADING = 'Cargando...';
 export const ONLINE = 'Conectado';
 export const OFFLINE = 'Sin conexión';
+export const CONNECTION = 'debido a una falla de conexión'
